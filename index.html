@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Village Milk Dairy · गाँव का दूध</title>
+  <meta name="description" content="Haryana village dairy. Jet-black Murrah buffalo milk, morning and evening. Village Milk Dairy." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #071428;
+      --blue: #0b3c8a;
+      --blue-2: #1648a6;
+      --sky: #d9e8ff;
+      --milk: #f7fbff;
+      --paper: #ffffff;
+      --line: #b7cce8;
+      --muted: #4a5d7a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      background: var(--milk);
+      color: var(--ink);
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin-inline: auto; }
+    header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(247,251,255,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      min-height: 76px; gap: 16px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .mark {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #2a62c4, var(--blue));
+      color: #fff; display: grid; place-items: center;
+      font-family: "Cormorant Garamond", serif; font-weight: 700; font-size: 22px;
+      border: 2px solid #fff; box-shadow: 0 0 0 2px var(--blue);
+    }
+    .brand b { display: block; letter-spacing: .08em; font-size: 13px; text-transform: uppercase; color: var(--blue); }
+    .brand small { color: var(--muted); font-size: 12px; }
+    nav ul { display: flex; gap: 18px; list-style: none; font-size: 14px; }
+    nav a:hover { color: var(--blue); }
+    .cta {
+      background: var(--blue); color: #fff; border: 0; border-radius: 999px;
+      padding: 10px 16px; font-weight: 600; cursor: pointer;
+    }
+    .hero {
+      display: grid; grid-template-columns: 1.05fr .95fr; gap: 28px;
+      padding: 36px 0 20px;
+    }
+    .kicker {
+      font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--blue); font-weight: 600;
+    }
+    h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(42px, 7vw, 78px); line-height: .92;
+      margin: 10px 0 16px;
+    }
+    h1 em { font-style: italic; color: var(--blue); }
+    .hi { font-family: "Tiro Devanagari Hindi", serif; }
+    .lead { color: var(--muted); max-width: 46ch; font-size: 17px; line-height: 1.55; }
+    .hero-actions { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; }
+    .ghost {
+      border: 1px solid var(--blue); color: var(--blue); background: #fff;
+      border-radius: 999px; padding: 10px 16px; font-weight: 600;
+    }
+    .stamp {
+      margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr);
+      border: 1px solid var(--line); background: #fff;
+    }
+    .stamp div { padding: 14px 16px; border-right: 1px solid var(--line); }
+    .stamp div:last-child { border-right: 0; }
+    .stamp strong { display: block; font-size: 22px; font-family: "Cormorant Garamond", serif; }
+    .stamp span { font-size: 12px; color: var(--muted); }
+    .portrait {
+      background: linear-gradient(160deg, var(--blue) 0%, #072a63 100%);
+      color: #fff; min-height: 520px; position: relative; overflow: hidden;
+      border-radius: 4px 72px 4px 72px;
+    }
+    .portrait .pad { padding: 28px; position: relative; z-index: 1; }
+    .portrait h2 { font-family: "Cormorant Garamond", serif; font-size: 34px; }
+    .man, .buff {
+      position: absolute; bottom: 0; opacity: .18;
+      font-size: 180px; line-height: 1; user-select: none;
+    }
+    .man { right: 8%; }
+    .buff { left: -8%; font-size: 220px; }
+    .horn-note {
+      position: absolute; right: 20px; bottom: 20px; z-index: 2;
+      font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,.35); padding: 8px 10px;
+    }
+    section { padding: 56px 0; }
+    .sec-title { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 22px; }
+    h3 { font-family: "Cormorant Garamond", serif; font-size: 36px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card { background: #fff; border: 1px solid var(--line); padding: 20px; }
+    .card h4 { font-family: "Cormorant Garamond", serif; font-size: 24px; margin: 8px 0; }
+    .price { color: var(--blue); font-weight: 600; }
+    .tag { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--blue); }
+    .herd { background: var(--blue); color: #fff; }
+    .herd .wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 28px; align-items: center; }
+    .herd p { color: #c9dbf7; max-width: 42ch; line-height: 1.6; }
+    .buffalo-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .b {
+      border: 1px solid rgba(255,255,255,.22); padding: 16px; min-height: 140px;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), transparent);
+    }
+    .b strong { display: block; font-family: "Cormorant Garamond", serif; font-size: 26px; }
+    .day {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      border: 1px solid var(--line); background: #fff;
+    }
+    .day article { padding: 28px; }
+    .day article + article { border-left: 1px solid var(--line); background: #eef5ff; }
+    ol { margin: 14px 0 0 18px; color: var(--muted); line-height: 1.7; }
+    form { display: grid; gap: 10px; background: #fff; border: 1px solid var(--line); padding: 22px; }
+    input, select, textarea {
+      width: 100%; padding: 12px; border: 1px solid var(--line); background: var(--milk); font: inherit;
+    }
+    footer { background: var(--ink); color: #d7e4f8; padding: 36px 0 24px; }
+    .foot { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .copy { margin-top: 18px; font-size: 12px; color: #8ea3c4; }
+    @media (max-width: 860px) {
+      .hero, .herd .wrap, .grid-3, .day, .buffalo-row { grid-template-columns: 1fr; }
+      nav ul { display: none; }
+      .stamp { grid-template-columns: 1fr; }
+      .stamp div { border-right: 0; border-bottom: 1px solid var(--line); }
+      .day article + article { border-left: 0; border-top: 1px solid var(--line); }
+      .portrait { border-radius: 4px 40px; min-height: 380px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home">
+        <div class="mark">व</div>
+        <div>
+          <b>Village Milk Dairy</b>
+          <small class="hi">गाँव का दूध · मुर्रा भैंस</small>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#herd">Murrah</a></li>
+          <li><a href="#products">Doodh</a></li>
+          <li><a href="#day">Do Waqt</a></li>
+          <li><a href="#order">Order</a></li>
+        </ul>
+      </nav>
+      <a class="cta" href="#order">Rozana Supply</a>
+    </div>
+  </header>
+  <main id="home" class="wrap">
+    <section class="hero">
+      <div>
+        <p class="kicker">Haryana · Black Gold Dairy</p>
+        <h1>Village<br>Milk <em>Dairy</em></h1>
+        <p class="hi" style="font-size:22px;margin-bottom:10px">जहाँ मुर्रा का दूध, वहीं इज़्जत।</p>
+        <p class="lead">Not a city plant. A village dairy built around jet-black Murrah buffaloes and an old dairyman in dhoti-kurta who still milks at first light. Blue tins. White cloth. Fat-rich milk.</p>
+        <div class="hero-actions">
+          <a class="cta" href="#order">Start morning can</a>
+          <a class="ghost" href="#herd">See the herd</a>
+        </div>
+        <div class="stamp">
+          <div><strong>6–7%</strong><span>Murrah milk fat</span></div>
+          <div><strong>2 Waqt</strong><span>Fajr &amp; sham milking</span></div>
+          <div><strong>0 Mix</strong><span>No water, no powder</span></div>
+        </div>
+      </div>
+      <aside class="portrait">
+        <div class="pad">
+          <p class="kicker" style="color:#9ec0ff">Brand mark</p>
+          <h2>Baba ji + Murrah</h2>
+          <p style="max-width:28ch;margin-top:10px;color:#d4e4ff">Elder Haryanvi man. Thick mustache. White dhoti-kurta. Pagri tied like Rohtak-Hisar country. Beside him: jet-black Murrah, spiral horns, white tail switch.</p>
+        </div>
+        <div class="man">🧔</div>
+        <div class="buff">🐃</div>
+        <div class="horn-note">Jet black · tightly curled horns</div>
+      </aside>
+    </section>
+  </main>
+  <section class="herd" id="herd">
+    <div class="wrap">
+      <div>
+        <p class="kicker" style="color:#9ec0ff">Kaali Sona</p>
+        <h3>Murrah herd</h3>
+        <p class="hi" style="color:#fff;font-size:20px;margin:8px 0 12px">काली सोना — हरियाणा की मुर्रा</p>
+        <p>Home tract of this dairy is Haryana Murrah country. Coat is jet black. Horns short and coiled inward like a jalebi. Head light, body heavy at the back, tail long with a white switch. This is the milk that built village kitchens.</p>
+      </div>
+      <div class="buffalo-row">
+        <div class="b"><strong>Dhanno line</strong>Morning 12–16 L · deep black, no white on face</div>
+        <div class="b"><strong>Rohtak dam</strong>Evening cream thick enough for desi ghee</div>
+        <div class="b"><strong>Hisar heifer</strong>Young stock kept on green chari + oilcake</div>
+        <div class="b"><strong>Jalebi sing</strong>Pure spiral horn — breed mark of Murrah</div>
+      </div>
+    </div>
+  </section>
+  <section id="products">
+    <div class="wrap">
+      <div class="sec-title">
+        <div>
+          <p class="kicker">Bhandar</p>
+          <h3>Cans from the aangan</h3>
+        </div>
+        <p class="hi" style="color:var(--muted)">दूध · दही · घी · पनीर</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <p class="tag">Daily</p>
+          <h4>Murrah Milk</h4>
+          <p>Warm at dawn, chilled by 8. Sold by the steel can, not plastic sachet theatre.</p>
+          <p class="price">₹80 / litre</p>
+        </article>
+        <article class="card">
+          <p class="tag">Set overnight</p>
+          <h4>Dahi</h4>
+          <p>Hung from the same milk. Sour enough for raita, thick enough for lassi.</p>
+          <p class="price">₹70 / 500g</p>
+        </article>
+        <article class="card">
+          <p class="tag">Slow fire</p>
+          <h4>Desi Ghee</h4>
+          <p>Bilona-style from Murrah cream. Grainy, nutty, village-gold.</p>
+          <p class="price">₹900 / kg</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section id="day">
+    <div class="wrap">
+      <div class="sec-title">
+        <div>
+          <p class="kicker">Do waqt ki mehnat</p>
+          <h3>How the dairy moves</h3>
+        </div>
+      </div>
+      <div class="day">
+        <article>
+          <h4 class="hi" style="font-size:28px">सुबह</h4>
+          <ol>
+            <li>4:30 — shed wash, first fodder</li>
+            <li>5:15 — hand milking of the black herd</li>
+            <li>6:00 — steel cans leave on cycle / scooter</li>
+            <li>7:30 — last doorstep pour in the gali</li>
+          </ol>
+        </article>
+        <article>
+          <h4 class="hi" style="font-size:28px">शाम</h4>
+          <ol>
+            <li>16:30 — second milking</li>
+            <li>17:15 — cream set aside for ghee</li>
+            <li>18:00 — evening can for regular homes</li>
+            <li>20:00 — dahi set in earthen bowls</li>
+          </ol>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section id="order">
+    <div class="wrap">
+      <div class="sec-title">
+        <div>
+          <p class="kicker">Likhwa do naam</p>
+          <h3>Daily milk khata</h3>
+        </div>
+      </div>
+      <form onsubmit="event.preventDefault(); this.querySelector('button').textContent='Naam chadh gaya — WhatsApp aayega';">
+        <input required name="name" placeholder="Naam / नाम" />
+        <input required name="phone" placeholder="WhatsApp number" />
+        <select name="plan">
+          <option>1 litre morning</option>
+          <option>1 litre morning + evening</option>
+          <option>2 litre family can</option>
+          <option>Ghee 1kg monthly</option>
+        </select>
+        <textarea rows="3" placeholder="Gali, village / colony, landmark"></textarea>
+        <button class="cta" type="submit">Chadhao khata</button>
+      </form>
+    </div>
+  </section>
+  <footer>
+    <div class="wrap foot">
+      <div>
+        <strong>Village Milk Dairy</strong>
+        <p class="hi">गाँव का दूध · मुर्रा भैंस · हरियाणा</p>
+      </div>
+      <div>Blue tin. White cloth. Black buffalo.</div>
+    </div>
+    <div class="wrap copy">Handmade mark — not a stock dairy theme. Baba ji in dhoti-kurta remains the face of the house.</div>
+  </footer>
+</body>
+</html>
